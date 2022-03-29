@@ -10,6 +10,7 @@ public class TenMinWalkTest {
     void should_return_false_if_array_is_empty() {
         assertThat(TenMinWalk.isValid(new char[] {})).isFalse();
     }
+
     @Test
     void should_return_false_if_array_length_less_than_10() {
         assertThat(TenMinWalk.isValid(new char[] {'s','w','e','n'})).isFalse();
@@ -31,7 +32,27 @@ public class TenMinWalkTest {
     }
 
     @Test
+    void should_return_false_if_the_north_south_length_array_will_be_8() {
+        assertThat(TenMinWalk.isValid(new char[] {'n','s','n','s','n','s','n','s'})).isFalse();
+    }
+
+    @Test
+    void should_return_false_if_the_north_south_length_array_will_be_12() {
+        assertThat(TenMinWalk.isValid(new char[] {'n','s','n','s','n','s','n','s','n','s','n','s'})).isFalse();
+    }
+
+    @Test
+    void should_return_true_if_east_west_result_will_be_0() {
+        assertThat(TenMinWalk.isValid(new char[] {'w','e','w','e','w','e','w','e','w','e'})).isTrue();
+    }
+    @Test
+    void should_return_false_if_the_west_east_length_array_will_be_8() {
+        assertThat(TenMinWalk.isValid(new char[] {'w','e','w','e','w','e','w','e'})).isFalse();
+    }
+
+    @Test
     void should_return_false_if_the_west_east_length_array_will_be_12() {
         assertThat(TenMinWalk.isValid(new char[] {'w','e','w','e','w','e','w','e','w','e','w','e'})).isFalse();
     }
+
 }

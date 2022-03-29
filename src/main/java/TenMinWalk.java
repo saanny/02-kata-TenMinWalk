@@ -1,8 +1,9 @@
 public class TenMinWalk {
 
     public static boolean isValid(char[] walk){
-        int northSouth=0;
-        int eastWest=0;
+        int northSouth = 0;
+        int eastWest = 0;
+
         if(checkArrayLength(walk,10)){
             for (char c : walk) {
                 if (c == 'n') {
@@ -20,6 +21,7 @@ public class TenMinWalk {
             }
             return northSouth == 0 && eastWest == 0;
         }
+
         return false;
 
     }
@@ -27,7 +29,5 @@ public class TenMinWalk {
     private static boolean checkArrayLength(char[] value,int number) {
         return value.length == number;
     }
-
-
 
 }
